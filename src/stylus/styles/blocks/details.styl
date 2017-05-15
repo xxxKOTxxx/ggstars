@@ -1,0 +1,156 @@
+#details
+  .block-icon
+    background-image url('~/images/details/icon.png')
+.table-wrap
+  max-width 100%
+  padding 37px 0 50px
+  overflow hidden
+.details-table
+  margin auto
+  font-size 20px
+  line-height 25px
+  transition all 0.2s linear
+  +media-query(all, max-width 580px)
+    width 100%
+    th span
+      max-width 200px
+      margin-left auto
+      display block
+    td
+      .date
+      .time
+        display block
+  +media-query(all, max-width 380px)
+    tr
+      th
+      td
+        padding 18px 10px
+  tr
+    &:first-of-type
+      .shadow
+        absolute -10px  -50px 0 0
+        background-color $background-light-color
+        box-shadow inset -5px 5px 15px 0 $background-color
+    &:last-of-type
+      th
+      td
+        &:after
+          display none
+      .shadow
+        absolute 0  -50px -10px 0
+        background-color $background-light-color
+        box-shadow inset -5px -5px 15px 0 $background-color
+  th
+  td
+    relative false
+    size 50% 60px
+    padding 18px 25px
+    box-sizing border-box
+    vertical-align top
+    &:after
+      content ''
+      height 1px
+      absolute false 0 0
+      z-index 10
+  th
+    text-align right
+    color $table-header-color
+    &:after
+     background-color $gold-darkest
+  td
+    text-align left
+    color $table-color
+    span
+      relative false
+      z-index 1
+    &:after
+      background-image linear-gradient(to right, $gold-darkest, $gold-darkest 15%, $border-dark-color)
+
+  .shadow
+    absolute 0 -50px 0 0
+    z-index 0
+    background-image linear-gradient(to right, $background-light-color, $background-light-color 85%, $background-color)
+
+  .date
+    margin-right 40px
+
+.robot-block
+  size 0px
+  relative false
+  margin auto
+  +media-query(all, max-width 800px)
+    display none
+.robot
+  absolute -140px 160px false false
+  z-index 20
+  size 503px 366px
+  display block
+  background-image url('~/images/details/robot.png')
+  background-position 50%
+  background-size contain
+  background-repeat no-repeat
+
+.timer-block
+  relative false
+  size 96% 320px
+  max-width 977px
+  margin 48px auto 45px
+  &:before
+    z-index 25
+  .timer-background
+    absolute 0
+    z-index 30
+    padding 55px 0 100px
+    box-sizing border-box
+    border 1px solid $border-dark-color
+    background-color $timer-background
+    background-image url('~/images/common/timer-background.png')
+    background-position 50% 0
+    background-size 977px 546px
+    background-repeat no-repeat
+    text-align center
+
+
+  .timer
+  .divider
+  .recruited
+    display inline-block
+    vertical-align top
+    width auto
+  .divider
+    size 2px 215px
+    margin 0 32px
+    background-image  linear-gradient(to bottom, transparent, $timer-divider-color 50%, transparent)
+  .timer
+  .recruited
+    .title
+      padding 10px 0 12px
+      text-align center
+      text-transform uppercase
+      font-size 23px
+      font-weight 500
+      color $text-first-color
+
+  +media-query(all, max-width 1020px)
+    height 546px
+    .divider
+      display none
+    .timer
+    .recruited
+      display table
+      margin auto
+  +media-query(all, max-width 780px)
+    size 100% 700px
+    .flip-clock-divider.minutes
+      width 0
+      clear left
+      .flip-clock-dot
+        display none
+
+.register
+  padding-bottom 65px
+  .text
+    margin-bottom 40px
+    font-size 23px
+    text-align center
+    color $text-first-color

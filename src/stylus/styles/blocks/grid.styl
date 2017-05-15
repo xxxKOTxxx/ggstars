@@ -1,0 +1,292 @@
+#grid
+  min-height 1215px
+  background-images('~/images/grid/background.jpg', 940px, 50% 275px, 640)
+  +media-query(all, max-width 640px)
+    min-height 0
+
+  .block-icon
+    background-image url('~/images/grid/icon.png')
+
+  .block-delimiter
+    relative false
+    &:before
+    &:after
+      content ''
+      absolute 9px false false
+      z-index 50
+      size 50% 167px
+      background-size 506px 167px
+      background-repeat no-repeat
+      +media-query(all, max-width 640px)
+        display none
+    &:before
+      right 50%
+      //margin-right 31px
+      background-image url('~/images/grid/delimiter-sword.png')
+      background-position top 0 right 31px
+    &:after
+      left 50%
+      //margin-left 31px
+      background-position 31px 0
+      background-image url('~/images/grid/delimiter-axe.png')
+
+.grid-wrap
+  width 98%
+  max-width 1185px
+  padding 150px 15px 25px
+  box-sizing border-box
+  margin-top -17px
+  background-color $black-95
+  border-bottom 1px solid $border-color
+  box-shadow 0 0 110px 25px $black
+  +media-query(all, max-width 640px)
+    display none
+    &.show
+      display block
+
+  .grid
+    display table
+    margin auto
+    min-height 510px
+  .block-wrap
+    display table-cell
+    vertical-align middle
+
+  .final
+    relative false
+    size 38px 100%
+    .versus
+      relative false
+      display table-cell
+      vertical-align middle
+      size 38px
+      border 1px solid $border-color
+      border-radius 50%
+      .text
+        padding-top 2px
+        font-size 18px
+        text-align center
+        color $versus-color
+
+      &:before
+        content ''
+        absolute false 0 100%
+        size 1px 70px
+        display block
+        margin auto
+        background-color $border-color
+
+    .champion
+      absolute -121px -105px false
+      size 210px 50px
+      margin auto
+      border 1px solid $border-color
+      .icon
+        size 36px
+        absolute -36px 0 false
+        z-index 1
+        margin auto
+        border 1px solid $border-color
+        border-radius 50%
+        .laurel-wreath
+          absolute -2px false false -15px
+          margin auto
+          size 65px 50px
+          fill $status-winner-color
+        img
+          size 36px
+          border-radius 50%
+      .name
+        size 100% 47px
+        box-sizing border-box
+        padding 0 10px
+        line-height 47px
+        background-color $background-light-color
+        text-align center
+        text-align-last center
+        overflow hidden
+        white-space nowrap
+        text-overflow ellipsis
+        span
+          display inline-block
+          vertical-align middle
+          color $text-other-color
+          font-size 14px
+          line-height 18px
+      .status
+        size 100% 3px
+        background-color $status-color
+      &.winner
+        .status
+          background-color $status-winner-color
+    .cup
+      absolute -240px 0 false -14px
+      size 65px
+      margin auto
+      fill $status-winner-color
+
+  .block
+    display inline-flex
+    flex-direction row
+    &.sword
+    &.axe
+      background-position 50%
+      background-repeat no-repeat
+    &.sword
+      padding-left 5px
+      background-image url('~/images/grid/shadow-sword.png')
+      background-size 234px 282px
+      .stage
+        margin-right 30px
+        &:last-of-type
+          margin-right 15px
+        &:nth-of-type(n + 2)
+          .team
+            &:first-of-type
+              &:after
+                right 100%
+      .round
+        &:before
+          top 50%
+          left 100%
+        &:after
+          right -15px
+        &:nth-of-type(odd)
+          &:after
+            top 50%
+        &:nth-of-type(even)
+          &:after
+            bottom 50%
+      .icon
+        padding-left 8px
+
+    &.axe
+      padding-right 5px
+      background-image url('~/images/grid/shadow-axe.png')
+      background-size 300px 350px
+      flex-direction row-reverse
+      .stage
+        margin-left 30px
+        &:last-of-type
+          margin-left 15px
+        &:nth-of-type(n + 2)
+          .team
+            &:first-of-type
+              &:after
+                left 100%
+      .round
+        &:before
+          top 50%
+          right 100%
+        &:after
+          left -15px
+        &:nth-of-type(odd)
+          &:after
+            top 50%
+        &:nth-of-type(even)
+          &:after
+            bottom 50%
+      .team
+        flex-direction row-reverse
+      .name
+        text-align right
+      .icon
+        padding-right 8px
+
+  .stage
+    display flex
+    flex-direction column
+    justify-content space-around
+    &:last-of-type
+      .round
+        &:after
+          display none
+    &:nth-of-type(n + 2)
+      .round
+        &:after
+          height 100%
+      .team
+        &:first-of-type
+          &:after
+            content ''
+            absolute 100% false false
+            size 16px 1px
+            display block
+            background-color $border-color
+    &:nth-of-type(n + 3)
+      .round
+        &:after
+          height 400%
+
+  .round
+    relative false
+    display flex
+    flex-direction column
+    size 210px 100px
+    padding 15px 0
+    &:before
+    &:after
+      content ''
+      absolute false
+      display block
+      background-color $border-color
+    &:before
+      size 15px 1px
+    &:after
+      size 1px 50%
+  .team
+    relative false
+    display flex
+    flex-direction row
+    size 210px 50px
+    border 1px solid $border-color
+    &:last-of-type
+      border-top 0 none
+    &.winner
+      .status
+        background-color $status-winner-color
+    img
+    .icon
+    .name
+    .status
+      display inline-block
+      vertical-align middle
+    .icon
+      size 36px 100%
+      line-height 48px
+      background-color $background-light-color
+      img
+        size 36px
+        border-radius 50%
+        overflow hidden
+    .name
+      width 100%
+      box-sizing border-box
+      padding 10px
+      background-color $background-light-color
+      line-height 30px
+      overflow hidden
+      white-space nowrap
+      text-overflow ellipsis
+      span
+        width 100%
+        overflow hidden
+        white-space nowrap
+        text-overflow ellipsis
+        display inline-block
+        vertical-align middle
+        color $text-other-color
+        font-size 14px
+        line-height 18px
+    .status
+      width 10px
+      background-color $status-color
+
+.show-grid
+.hide-grid
+  margin 28px auto 35px
+  display none
+.hide-grid
+.show-grid
+  +media-query(all, max-width 640px)
+    display block

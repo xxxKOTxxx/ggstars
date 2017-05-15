@@ -1,0 +1,128 @@
+header
+  size 100% 60px
+  fixed 0 0 false 0
+  z-index 1000
+  background-color $background-color
+  border-bottom 2px solid $header-border
+  text-align center
+  .header
+    min-width 100%
+    display inline-block
+    transition min-width 0.2s linear
+    +media-query(all, max-width 1440px)
+      min-width 280px
+      padding 0 20px
+
+  .logo
+    size 138px 58px
+    float left
+    padding-right 22px
+    cursor pointer
+
+  .menu-block
+    height 60px
+    relative false
+    float left
+    display table
+    +media-query(all, min-width 1440px)
+      float right
+
+  .mobile-menu
+    size 60px auto
+    max-width 60px
+    display table-cell
+    background-image url('~images/common/mobile-menu.png')
+    background-size 49px
+    background-position 50%
+    background-repeat no-repeat
+    +media-query(all, min-width 720px)
+      max-width 0
+
+  .menu
+    display none
+    &.static
+      display table-cell
+      relative false
+      overflow hidden
+      white-space nowrap
+      transition max-width 0.2s linear
+      .runner
+        display block
+
+    &.animated
+      a
+        transition color 0.2s linear, margin 0.2s linear
+      .runner
+        transition all 0.2s linear
+
+
+  .menu-item
+    height 60px
+    line-height 60px
+    white-space nowrap
+    a
+      size 100%
+      +media-query(all, max-width 1440px)
+        margin 0
+
+    &.active
+      a
+        display block
+        size 100%
+        color $menu-color-active
+        cursor default
+        &:hover
+          color $menu-color-active
+    +media-query(all, min-width 1440px)
+      &:last-of-type
+        a
+          margin-right 0
+
+  .runner
+    display none
+    size 0 2px
+    absolute false false 0 0
+    background-color $runner-color
+
+  .language-switcher
+    width 48px
+    relative false
+    float right
+    margin-top 20px
+    margin-right -124px
+    margin-left 0
+    transition margin 0.2s linear
+    +media-query(all, max-width 1440px)
+      margin-right 0
+      margin-left 26px
+    +media-query(all, max-width 720px)
+      margin-left 0
+    li:last-of-type
+      .language-block
+        margin-bottom 0
+    .language-block
+      min-width 38px
+      margin-bottom 6px
+      display table
+      font-size 11px
+      color $menu-color
+      text-decoration none
+      text-transform uppercase
+      span
+      .language-icon
+        display table-cell
+        vertical-align middle
+      span
+        padding-top 2px
+    .language-icon
+      size 17px
+      padding-left 5px
+      background-size contain
+      background-position right center
+      background-repeat no-repeat
+      &.ru
+        background-image url('~/images/flags/ru.png')
+      &.ua
+        background-image url('~/images/flags/ua.png')
+      &.en
+        background-image url('~/images/flags/en.png')

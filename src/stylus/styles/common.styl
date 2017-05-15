@@ -1,0 +1,264 @@
+html
+body
+  size 100%
+  background-color $background-color
+  color $text-color
+  font-family 'Roboto', sans-serif
+
+body
+  min-width 320px
+  max-width 1920px
+  margin auto
+  padding-top 62px
+  box-sizing border-box
+
+  .hide
+    display none
+a
+  outline none
+svg
+  size 100%
+  display block
+  fill inherit
+  &#svg-sprite
+    size 0px
+    overflow hidden
+
+.highlight-top
+  &:before
+    content ''
+    absolute -70px 0 false
+    z-index -1
+    size 100% 140px
+    display block
+    background-image radial-gradient(55% 30%, #171e21 0%, transparent 100%)
+
+.bordered
+  border 2px solid #a78850
+
+.menu
+  list-style none
+  font-size 0
+.menu-item
+  display inline-block
+  text-align center
+  a
+    display inline-block
+    box-sizing border-box
+    padding 0 13px
+    margin 0 11px
+    font-size 14px
+    letter-spacing -0.1px
+    color $menu-color
+    text-decoration none
+    text-transform uppercase
+    cursor pointer
+    &:hover
+      color $menu-color-hover
+
+.dropdown-button
+  cursor pointer
+.dropdown-icon:after
+  content ''
+  display inline-block
+  vertical-align middle
+  margin-bottom -9px
+  margin-left 4px
+  triangle(down, 4px, $menu-color)
+.dropdown
+  absolute 100% 0 false false
+  display none
+  padding 6px 10px
+  border 2px solid $header-border
+  border-radius 5px
+  background-color $dropdown-background-color
+  &.open
+    display block
+
+.button
+  display block
+  size 480px 95px
+  margin auto
+  background-color #7E2446
+  background-image url('~/images/common/button.png')
+  background-size contain
+  background-position 50%
+  background-repeat no-repeat
+  border-radius 5px
+  text-align center
+  letter-spacing -0.2px
+  font-size 35px
+  line-height 95px
+  cursor pointer
+  transition all 0.2s linear
+  &.main
+    text-transform uppercase
+  &.small
+    size 280px 56px
+    font-size 20px
+    line-height 56px
+    &.red
+      size 260px 66px
+      font-size 25px
+      line-height 66px
+  &.red
+    background-color #8C1133
+    background-image url('~/images/common/button-thin-red.png')
+  &:hover
+    color $gold
+  +media-query(all, max-width 640px)
+    size 280px 56px
+    font-size 20px
+    line-height 56px
+  &.adaptive-blue
+  &.adaptive-red
+    size 340px 76px
+    font-size 30px
+    font-weight 500
+    line-height 76px
+    +media-query(all, max-width 780px)
+      width 260px
+    +media-query(all, max-width 640px)
+      size 130px 66px
+      line-height 66px
+      font-size 26px
+      .hiding
+        display none
+  &.adaptive-blue
+    background-image url('~/images/common/button-medium-blue.png')
+    +media-query(all, max-width 780px)
+      background-image url('~/images/common/button-blue.png')
+    +media-query(all, max-width 640px)
+      background-image url('~/images/common/button-small-blue.png')
+  &.adaptive-red
+    background-image url('~/images/common/button-medium-red.png')
+    +media-query(all, max-width 780px)
+      background-image url('~/images/common/button-red.png')
+    +media-query(all, max-width 640px)
+      background-image url('~/images/common/button-small-red.png')
+
+.content
+  max-width 1140px
+  margin auto
+
+.content-block
+  width 100%
+
+.block-icon
+  size 130px
+  display block
+  padding-top 10px
+  margin auto
+  background-size contain
+  background-position 50% 100%
+  background-repeat no-repeat
+
+.block-heading
+  display table
+  margin 24px auto
+  padding 0 20px
+  font-size 60px
+  line-height 60px
+  font-weight 700
+  text-align center
+  text-transform uppercase
+  color #9A7B46
+  background: -webkit-linear-gradient(top, #d3c274 0%, #6C4722 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition all 0.2s linear
+  +media-query(all, max-width 540px)
+    padding 0 10px
+    font-size 40px
+
+.block-delimiter
+  size 100% 36px
+  display block
+  background-image url('~/images/common/delimiter.png')
+  background-size 1920px 36px
+  background-position 50% 0
+  background-repeat no-repeat
+
+.ratio
+  relative false
+  &:after
+    content ''
+    display block
+.ratio-content
+  absolute 0
+  z-index 0
+.ratio-4x3:after
+  padding-top 133%
+.ratio-5x4:after
+  padding-top 125%
+.ratio-83:after
+  padding-top 83%
+
+.lined-wrap
+  display flex
+  flex 1
+  width 100%
+  margin auto
+  .line
+    flex-grow 1
+    margin 0 7px
+    background-size 100% 1px
+    background-position 0 50%
+    background-repeat repeat-x
+    &.left
+      background-image linear-gradient(to right, transparent 0%, #40321e 50%, #40321e 100%)
+    &.right
+      background-image linear-gradient(to left, transparent 0%, #40321e 50%, #40321e 100%)
+  .lined
+    relative false
+    &:before
+    &:after
+      content ''
+      absolute 0 false 0
+      size 5px
+      margin auto
+      border 1px solid #40321e
+      border-radius 50%
+    &:before
+      right 100%
+    &:after
+      left 100%
+
+.styled-text
+  p
+    text-align justify
+    font-size 18px
+    font-weight 300
+    line-height 26px
+    color $text-other-color
+    margin-bottom 10px
+    &:first-of-type
+      font-size 20px
+      font-weight 400
+      color $text-first-color
+      &:first-letter
+        float left
+        font-size 70px
+        line-height 70px
+        padding-bottom 6px
+        margin-right 12px
+        border-bottom 3px solid $text-first-letter-dash
+
+.justify-blocks
+  text-align justify
+  text-align-last justify
+  line-height 0
+  font-size 1px
+  text-justify newspaper
+  zoom 1
+  &:after
+    content ''
+    size 100% 0
+    display inline-block
+    overflow hidden
+    visibility hidden
+.justify-block
+  display inline-block
+  vertical-align top
+  text-align-last auto
+  line-height normal

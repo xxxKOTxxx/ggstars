@@ -1,0 +1,17 @@
+$ cat .gitignore
+# Ignore node modules
+node_modules/
+# Ignore temporary directory
+TMP/
+# Ignore materials directory
+materials/
+# Ignore JetBrains directory
+.idea/
+# Ignore distribution directory
+#www/
+# Ignore node link
+/Node.lnk
+
+
+# Ignore node link
+/.phpintel

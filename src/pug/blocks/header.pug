@@ -1,0 +1,51 @@
+header
+  .content
+    .header
+      a.logo(
+        href="#"
+        tabindex="1"
+      )
+        svg
+          use(xlink:href="#logo-light")
+
+      .language-switcher
+        .language-block.dropdown-button.dropdown-icon
+          span!="<?= $current_language ?>"
+          .language-icon(class!="<?= $current_language ?>")
+
+        ul.dropdown
+          !="<? foreach($available_languages as $language): ?>"
+          li
+            a.language-block(href!="?language=<?= $language ?>")
+              span!="<?= $language ?>"
+              .language-icon(class!="<?= $language ?>")
+          !="<? endforeach; ?>"
+
+      .menu-block
+        .mobile-menu.dropdown-button
+        ul.menu
+          li.menu-item
+            a(
+              href="#details"
+              tabindex="2"
+            ) Детали
+          li.menu-item
+            a(
+              href="#grid"
+              tabindex="3"
+            ) Турнирная сетка
+          li.menu-item
+            a(
+              href="#prize"
+              tabindex="4"
+            ) Награда
+          li.menu-item
+            a(
+              href="#stages"
+              tabindex="5"
+            ) Этапы
+          li.runner
+
+
+
+

@@ -1,0 +1,53 @@
+#grid.content-block
+  .block-icon
+  h2.block-heading Турнирная сетка
+  .block-delimiter
+  .content.grid-wrap
+    .scroll-wrap
+      .grid
+        !="<? foreach($grid as $name => $block): ?>"
+        !="<? if($name == 'champion'): ?>"
+        .block-wrap
+          .final
+            .cup
+              svg
+                use(xlink:href="#cup")
+            .champion(class!="<?= $grid['champion'] ? 'winner' : '' ?>")
+              .icon
+                svg.laurel-wreath
+                  use(xlink:href="#laurel-wreath")
+                img(
+                  src!="<?= $team['icon'] ?>"
+                  alt!="<?= $team['name'] ?>"
+                  title!="<?= $team['name'] ?>"
+                )
+              .name
+                span(title!="<?= $team['name'] ?>")!="<?= $grid['champion']['name'] ?>"
+              .status
+            .versus
+                .text VS
+        !="<? else: ?>"
+        .block-wrap
+          .block(class!="<?= $name ?>")
+            !="<? foreach($block as $number => $stage): ?>"
+            .stage(class!="stage-<?= $number ?>")
+              !="<? foreach($stage as $number => $round): ?>"
+              .round(class!="round-<?= $number ?>")
+                !="<? foreach($round as $number => $team): ?>"
+                .team(class!="<?= $team['winner'] ? 'winner' : '' ?>")
+                  .icon
+                    img(
+                      src!="<?= $team['icon'] ?>"
+                      alt!="<?= $team['name'] ?>"
+                      title!="<?= $team['name'] ?>"
+                    )
+                  .name
+                    span(title!="<?= $team['name'] ?>")!="<?= $team['name'] ?>"
+                  .status
+                !="<? endforeach; ?>"
+              !="<? endforeach; ?>"
+            !="<? endforeach; ?>"
+        != "<? endif; ?>"
+        !="<? endforeach; ?>"
+  a.button.main.show-grid(tabindex="9") Показать
+  a.button.main.hide-grid.hide(tabindex="9") Скрыть

@@ -1,0 +1,37 @@
+background-images(source, height, position = false, min_resolution = 0, max_resolution = 0)
+  path = dirname(source)
+  extention = extname(source)
+  file_name = basename(source, extention)
+  background = pathjoin(path, file_name + '-1920' + extention)
+  if max_resolution
+    background = pathjoin(path, file_name + '-' + max_resolution + extention)
+  if !position
+    position = 50% 0
+
+  width = 1920px
+  if max_resolution
+    width = unit(max_resolution, 'px')
+
+  background-image: url(background)
+  background-size: width height
+  background-position position
+  background-repeat no-repeat
+  resolutions = 320 480 640 960 1280
+  if min_resolution
+    +media-query(all, max-width unit(min_resolution, 'px'))
+      background-image none
+  for resolution, index in resolutions
+
+    if resolution > min_resolution
+      width = unit(resolution, 'px')
+      suffix = '-' + resolution
+      image = pathjoin(path, file_name + suffix + extention)
+      if !index
+        +media-query(all, max-width width)
+          background-image: url(image)
+          background-size: width height
+      else
+        min_width = unit(resolutions[index - 1] + 1, 'px')
+        +media-query(all, min-width min_width, max-width width)
+          background-image: url(image)
+          background-size: width height

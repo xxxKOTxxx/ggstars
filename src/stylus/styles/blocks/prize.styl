@@ -1,0 +1,114 @@
+#prize
+  background-images('~/images/prize/background.png', 720px, 50% 100%, 0, 1280)
+  .content
+    padding-bottom 530px
+    transition all 0.2s linear
+    +media-query(all, max-width 680px)
+      margin-bottom 20px
+    +media-query(all, max-width 640px)
+      padding-bottom 310px
+  .block-icon
+    background-image url('~/images/prize/icon.png')
+
+  .button
+    margin-top 45px
+
+.prize-blocks
+  width 100%
+  max-width 1140px
+  padding 115px 15px 50px
+  box-sizing border-box
+  margin auto
+.prize-block
+  relative false
+  width 32%
+  max-width 350px
+  padding 90px 15px 35px
+  box-sizing border-box
+  text-align center
+  text-align-last center
+  background-color $background-light-color
+  border 1px solid $border-color
+  transition all 0.2s linear
+  +media-query(all, max-width 1040px)
+    width 31.4%
+  +media-query(all, min-width 680px, max-width 840px)
+    padding-top 77px
+    padding-bottom 30px
+  +media-query(all, max-width 680px)
+    display block
+    width 90%
+    max-width 350px
+    margin 85px auto 0
+    &:first-of-type
+      margin-top -15px
+  .icon
+    absolute -57px 0 false
+    z-index 10
+    size 122px
+    margin auto
+    background-position 50% 0
+    background-size 122px
+    background-repeat no-repeat
+  &.gold
+    .icon
+      background-image url('~/images/prize/gold.png')
+  &.silver
+    .icon
+      background-image url('~/images/prize/silver.png')
+  &.bronze
+    .icon
+      background-image url('~/images/prize/bronze.png')
+  .title
+    display block
+    margin auto
+    height 20px
+    line-height 20px
+    span
+      display inline-block
+      vertical-align middle
+      font-size 14px
+      line-height 20px
+      font-weight 500
+      text-transform uppercase
+      color $text-first-color
+    +media-query(all, max-width 840px)
+      size 150px 50px
+      line-height 50px
+  .prize
+    font-size 80px
+    font-weight 500
+    text-transform uppercase
+    color $text-other-color
+    transition all 0.2s linear
+    +media-query(all, max-width 1040px)
+      font-size 50px
+    +media-query(all, max-width 680px)
+      font-size 70px
+
+  .description
+    display block
+    margin auto
+    height 20px
+    line-height 20px
+    font-size 14px
+    font-weight 300
+    color $text-other-color
+
+.other-prizes
+  padding 12px 35px
+  font-size 28px
+  color $text-first-color
+  transition all 0.2s linear
+  +media-query(all, max-width 900px)
+    padding 12px 10px
+  +media-query(all, max-width 680px)
+    padding 12px 0
+    span
+      display block
+      text-align center
+  .bordered
+    padding 6px 12px
+    margin 0 17px
+    +media-query(all, max-width 680px)
+      margin 17px

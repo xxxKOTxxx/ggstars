@@ -1,0 +1,99 @@
+#intro
+  width 100%
+  background-images('~/images/intro/background.jpg', 712px, 50% 64px)
+  .heading
+    size 100% 133px
+    background-image url('~/images/intro/league_of_legends.png'), url('~/images/intro/league_of_legends_bg.png')
+    background-size 619px 133px, 4px 64px
+    background-position top center
+    background-repeat no-repeat, repeat-x
+
+  .heading-text
+    display table
+    margin 44px auto 0
+    padding 0 20px
+    text-align center
+    text-transform uppercase
+    color $text-first-color
+    background: -webkit-linear-gradient(-45deg, #ccba75 0%,#ccba75 10%,#fffdf9 50%,#fbcdb8 80%,#fbcdb8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    .big
+      font-family 'Bebas'
+      font-size 120px
+      font-weight 700
+      letter-spacing -0.2px
+      line-height 100px
+      transition all 0.2s linear
+      +media-query(all, max-width 880px)
+        font-size 90px
+        line-height 90px
+      +media-query(all, max-width 640px)
+        font-size 60px
+        line-height 60px
+
+    .small
+      font-size 56px
+      font-weight 700
+      transition all 0.2s linear
+      +media-query(all, max-width 880px)
+        font-size 42px
+      +media-query(all, max-width 640px)
+        font-size 28px
+    .logo
+      size 240px 86px
+      margin 20px auto 26px
+  .register
+    text-align center
+    margin-bottom 22px
+    .text
+      max-width 670px
+      margin 0 auto 54px
+      font-size 30px
+      font-weight 700
+      line-height 40px
+      transition all 0.2s linear
+      +media-query(all, max-width 880px)
+        max-width 400px
+      +media-query(all, max-width 440px)
+        max-width 320px
+        font-size 22px
+        line-height 30px
+
+  .text-block
+    display table
+    margin auto
+    font-size 0
+    text-align center
+    padding 0 20px
+    +media-query(all, max-width 1440px)
+      max-width 780px
+    .sword
+    .axe
+    .styled-text
+      display inline-block
+      vertical-align middle
+    .sword
+    .axe
+      width 300px
+      .image
+        background-position 50% 0
+        background-size contain
+        background-repeat no-repeat
+      +media-query(all, max-width 1440px)
+        width 50%
+        max-width 300px
+    .sword
+      .image
+        background-image url('~/images/common/sword.png')
+    .axe
+      .image
+        background-image url('~/images/common/axe.png')
+    .styled-text
+      max-width 780px
+      padding 0 30px 32px
+      box-sizing border-box
+      +media-query(all, max-width 1440px)
+        float left
+      +media-query(all, max-width 640px)
+        padding 0 0 32px

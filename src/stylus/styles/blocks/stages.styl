@@ -1,0 +1,345 @@
+#stages
+  width 100%
+  min-height 1348px
+  background-images('~/images/stages/background.jpg', 1013px, 50% 335px)
+
+  .block-icon
+    background-image url('~/images/stages/icon.png')
+
+  .styled-text
+    width 96%
+    max-width 920px
+    box-sizing border-box
+    padding 0 10% 50px
+    margin 50px auto 0
+    background-color $black-75
+    box-shadow 0 0 40px 20px $black-75
+    transition all 0.2s linear
+    +media-query(all, max-width 780px)
+      padding 0 10% 50px
+    +media-query(all, max-width 680px)
+      padding 0 5% 50px
+    +media-query(all, max-width 360px)
+      padding 0 3.75% 50px
+
+
+.stages
+  width 100%
+  max-width 1140px
+  padding 75px 15px 140px
+  box-sizing border-box
+  margin auto
+  transition all 0.2s linear
+  +media-query(all, max-width 1020px)
+    padding-bottom 50px
+  +media-query(all, max-width 480px)
+    padding-bottom 0
+
+  .stage
+    relative false
+    size 32% 535px
+    max-width 350px
+    background-color $background-light-color
+    transition all 0.2s linear
+    background-size 360px 535px
+    background-position 50% 0
+    background-repeat no-repeat
+    &.selection
+      background-image url('~/images/stages/stage-selection.jpg')
+    &.semifinal
+      background-image url('~/images/stages/stage-semifinal.jpg')
+    &.final
+      background-image url('~/images/stages/stage-final.jpg')
+    +media-query(all, max-width 1020px)
+      width 96%
+      display block
+      margin 0 auto 30px
+    +media-query(all, min-width 520px, max-width 1020px)
+      height 489px
+      max-width 460px
+      background-size 460px 489px
+      &.selection
+        background-image url('~/images/stages/stage-selection-wide.jpg')
+      &.semifinal
+        background-image url('~/images/stages/stage-semifinal-wide.jpg')
+      &.final
+        background-image url('~/images/stages/stage-final-wide.jpg')
+    +media-query(all, max-width 520px)
+      max-width 360px
+
+  .info
+    absolute 288px 0 0
+    box-sizing border-box
+    padding 40px 20px 20px
+    border-top 1px solid $border-light-color
+    background-color $black-80
+  .number
+    absolute -21px 0 false
+    margin auto
+    text-align center
+    font-weight 500
+    font-size 30px
+    line-height 43px
+    color $text-first-color
+    background-image url('~/images/stages/stage-number.png')
+    background-size 43px
+    background-position 50%
+    background-repeat no-repeat
+  .heading
+    text-align center
+    text-transform uppercase
+    font-size 31px
+    font-weight 500
+    line-height 60px
+    color $white
+  .description
+    font-size 15px
+    font-weight 300
+    line-height 22px
+    color $text-other-color
+
+.bet-heading
+.bet-subheading
+  text-align center
+  font-size 23px
+  line-height 36px
+  color $text-first-color
+.bet-heading
+  padding 15px 75px
+  text-transform uppercase
+  transition all 0.2s linear
+  +media-query(all, max-width 780px)
+    padding 15px 40px
+  +media-query(all, max-width 680px)
+    max-width 200px
+  +media-query(all, max-width 480px)
+    padding 15px 20px
+  +media-query(all, max-width 380px)
+    padding 15px 10px
+.bet-subheading
+  p
+    display inline-block
+    +media-query(all, max-width 740px)
+      padding 0 3.75%
+  strong
+    font-weight 400
+    color $white
+    white-space nowrap
+
+.create-bet
+  width 100%
+  max-width 1140px
+  display table
+  table-layout fixed
+  font-size 33px
+  line-height 40px
+  .icon
+  .name
+  .vote
+  .coefficient
+    display table-row
+  .sword
+  .axe
+    width 50%
+    display table-cell
+    vertical-align middle
+    text-align center
+
+  .image
+    background-size auto 74%, auto 100%
+    background-repeat no-repeat, no-repeat
+
+  .sword
+    .image
+      background-image url('~/images/common/sword.png'), url('~/images/stages/sword-background.png')
+      background-position 50% 80%, 76% 50%
+  .axe
+    .image
+      background-image url('~/images/common/axe.png'), url('~/images/stages/axe-background.png')
+      background-position 50% 92%, 23.8% 50%
+  .name
+    .axe
+    .sword
+      padding-bottom 25px
+    span
+      display inline-block
+      vertical-align middle
+      color $text-first-color
+      transition all 0.2s linear
+      +media-query(all, max-width 780px)
+        font-size 23px
+        line-height 28px
+      +media-query(all, max-width 640px)
+        font-size 18px
+        line-height 23px
+
+  .lined-wrap
+    padding 40px 0 60px
+    +media-query(all, max-width 640px)
+      display block
+      .line
+        display none
+
+  .lined
+    padding 0 19px
+    transition all 0.2s linear
+    +media-query(all, max-width 640px)
+      padding 0
+      margin auto
+      &:before
+      &:after
+        display none
+  .bordered
+    color $white
+    padding 6px 32px
+
+
+.bets-wrap
+  width 100%
+  max-width 1140px
+  box-sizing border-box
+  padding 0 20px
+  margin auto
+  +media-query(all, max-width 800px)
+    display none
+    &.show
+      display block
+.wrap-table
+  width 100%
+  .sword
+  .axe
+    width 50%
+
+  .sword
+    .switch-column
+      background-image url('~/images/common/axe.png'), radial-gradient(50% 50%, $axe-dark-color, transparent)
+  .axe
+    .switch-column
+      background-image url('~/images/common/sword.png'), radial-gradient(50% 50%, $sword-dark-color, transparent)
+  .switch-column
+    display none
+    background-size auto 100%
+    background-position 50%
+    background-repeat no-repeat
+    cursor pointer
+  +media-query(all, max-width 740px)
+    .switch-column
+      display table-cell
+    .hide-column
+      display none
+    .empty
+      display none
+
+
+.scroll-table
+  size 100% 250px
+  overflow auto
+  .sword
+  .axe
+    background-size 100%
+    background-repeat no-repeat
+    td
+      border-bottom 1px solid $border-color
+  .sword
+    background-position -2px 0
+    background-image linear-gradient(to left, $sword-color 65%, transparent)
+    +media-query(all, max-width 740px)
+      background-position 0
+      background-image linear-gradient(to left, transparent, $sword-color 35%, $sword-color 65%, transparent)
+  .axe
+    background-position 2px 0
+    background-image linear-gradient(to right, $axe-color 65%, transparent)
+    +media-query(all, max-width 740px)
+      background-position 0
+      background-image linear-gradient(to right, transparent, $axe-color 35%, $axe-color 65%, transparent)
+
+.bets-table
+  width 100%
+  font-size 14px
+  table-layout fixed
+  &.heading
+  &.total
+    color $table-header-color
+  &.total
+    text-align left
+
+  &.heading
+  &.bets
+    text-align center
+  &.bets
+    color $table-color
+
+  th
+  td
+    size 120px 50px
+    min-width 80px
+    box-sizing border-box
+    padding 0 5px
+    line-height 50px
+    vertical-align middle
+    +media-query(all, max-width 1020px)
+      width 80px
+    &.player
+      width 50%
+      text-align left
+      overflow hidden
+      white-space nowrap
+      text-overflow ellipsis
+      span
+        display inline
+        margin-left 10px
+    span
+      display inline-block
+      vertical-align middle
+      line-height 18px
+      &.block
+        display block
+
+  th
+  &.total td
+    border-top 2px solid $border-color
+    border-bottom 2px solid $border-color
+    &.switch-column
+      size 90px 100%
+    &.total-bets
+      padding-left 15px
+    &.total-sum
+      text-align right
+      padding-right 15px
+  &.total td
+    width 50%
+    +media-query(all, max-width 480px)
+      .hiding
+        display none
+    +media-query(all, max-width 380px)
+      span
+        display none
+        &.value
+          display block
+  th
+    &.player
+      padding-left 25px
+  td
+    &.player
+      padding-left 15px
+      img
+        size 36px
+        display inline-block
+        vertical-align middle
+        overflow hidden
+        border-radius 50%
+    .date
+      color $white
+    .time
+      font-size 17px
+      color $text-first-color
+
+
+.show-bets
+.hide-bets
+  margin 28px auto 35px
+  display none
+.hide-bets
+.show-bets
+  +media-query(all, max-width 800px)
+    display block

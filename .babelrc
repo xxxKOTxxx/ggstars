@@ -1,0 +1,15 @@
+{
+  "presets": [
+    [
+      "es2015",
+      {
+        "modules": false
+      }
+    ],
+    "stage-0"
+  ],
+  "plugins": [
+    "transform-es3-property-literals",
+    "transform-runtime"
+  ]
+}

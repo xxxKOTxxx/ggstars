@@ -1,0 +1,87 @@
+/*** Flip clock overrides ***/
+.flip-clock-divider
+  margin-bottom 58px
+  .flip-clock-label
+    top auto
+    bottom -40px
+    color $text-other-color
+    text-transform capitalize
+    font-size 14px
+.flip-clock-dot
+  background #070707
+  box-shadow 0 2px 2px 0 rgba(255,255,255,0.4)
+  &.top
+    top 34px
+  &.bottom
+    bottom 26px
+.flip-clock-wrapper
+  margin auto
+  ul
+    size 56px 94px
+    margin 5px 8px
+    &:before
+      content ''
+      absolute -2px -2px false false
+      size 61px 100px
+      background-image url('~/images/common/timer-wrap.png')
+      background-position 50%
+      background-size 61px 100px
+      background-repeat no-repeat
+    li
+      a
+        div
+          &.up
+            &:after
+              size 46px 2px
+              top 45px
+              left 5px
+              background-color $black
+            div.inn
+            .shadow
+              box-shadow inset 0 1px 1px 0 #888
+              border-radius 6px 6px 0 0
+          div.inn
+            font-family 'Bebas'
+            font-weight 700
+            font-size 90px
+            line-height 104px
+            background-color #3c3b3c
+            background-image url('~/images/common/timer-mounting.png')
+            background-position 50%
+            background-size 57px 18px
+            background-repeat no-repeat
+          &.down
+            div.inn
+            .shadow
+              box-shadow inset 0px -1px 1px 0px  #2d2d2d
+
+/*** Custom scrollbar overrides ***/
+#mCSB_1_scrollbar_vertical
+ .mCSB_draggerContainer
+    top 62px
+
+.mCustomScrollBox
+  height auto
+.mCSB_scrollTools
+  .mCSB_dragger
+    z-index 1000
+.mCSB_scrollTools.mCSB_scrollTools_horizontal
+  opacity 1
+  max-width 580px
+  margin 0 auto
+  height 11px
+  a + .mCSB_draggerContainer
+    .mCSB_draggerRail
+      height 1px
+      margin 5px 0
+      background-color #31271e
+    .mCSB_dragger
+      .mCSB_dragger_bar
+        height 10px
+        margin 0 auto
+        background-color #c79a3c
+  .mCSB_buttonRight
+      triangle(right, 6px, #c79a3c)
+  .mCSB_buttonLeft
+    triangle(left, 6px, #c79a3c)
+

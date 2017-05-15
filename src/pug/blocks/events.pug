@@ -1,0 +1,46 @@
+#events.content-block
+  .block-icon
+  h2.block-heading Будь в курсе событий
+  .block-delimiter
+  .content
+    .shadow-box
+      .icon
+      .styled-text
+        p Не пропусти прямую трансляцию турнира, которая пройдет на нашем канале Twitch. Во время трансляции матчей турнира пройдут все конкурсы и будут разыграны призы!
+        p Боишься пропустить трансляцию? Не волнуйся, мы обязательно отправим тебе письмо с напоминанием, чтобы ты смог посмотреть нашу увлекательную игру и поучаствовать в дополнительных розыгрышах.
+
+      .lined-wrap
+        span.line.left
+        .lined.subscribe-heading
+          span А пока
+            strong  подпишись
+        span.line.right
+      .subscribe-subheading на наши странички в соцсетях, чтобы не пропустить важные новости о турнире!
+
+      ul.justify-blocks.widgets
+        li.justify-block.widget.widget_vk
+          .title Вконтакте
+          .event-container
+            #vk_groups
+        li.justify-block.widget.widget_fb
+          .title Facebook
+          .event-container
+            .fb-page(
+              data-href='https://www.facebook.com/goodgamestarz'
+              data-tabs='timeline'
+              data-height='204'
+              data-small-header='true'
+              data-adapt-container-width='true'
+              data-hide-cover='false'
+              data-show-facepile='true'
+            )
+              blockquote.fb-xfbml-parse-ignore(cite='https://www.facebook.com/goodgamestarz')
+                a(href='https://www.facebook.com/goodgamestarz') GGStars
+        li.justify-block.widget.widget_tw
+          .title Twitter
+          .event-container
+            a.twitter-timeline(
+              data-height='204'
+              data-chrome="noscrollbar"
+              href='https://twitter.com/GgstarsCom'
+            ) Tweets by GgstarsCom

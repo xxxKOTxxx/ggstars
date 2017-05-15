@@ -1,0 +1,54 @@
+.schedule-table
+  margin auto
+
+  th
+  td
+    height 50px
+    text-align center
+    padding 0 10px
+    vertical-align middle
+    transition all 0.2s linear
+    +media-query(all, max-width 560px)
+      padding 0 5px
+    &.name
+      text-align left
+      +media-query(all, max-width 480px)
+        display none
+    &.free
+      +media-query(all, max-width 640px)
+        display none
+  th
+    text-align center
+    color $table-header-color
+    border-top 2px solid $border-color
+    border-bottom 2px solid $border-color
+    &.name
+      padding-left 20px
+      +media-query(all, max-width 560px)
+        padding-left 10px
+  td
+    color $table-color
+    border-bottom 1px solid $border-color
+    span
+      display inline-block
+      vertical-align middle
+    &.name
+      padding-left 15px
+      +media-query(all, max-width 560px)
+        padding-left 5px
+    &.places
+      white-space nowrap
+      .free
+        display none
+        +media-query(all, max-width 640px)
+          display inline
+    &.register
+      max-width 196px
+      +media-query(all, max-width 560px)
+        max-width 154px
+        min-width 154px
+      .button
+        transform-origin 0 50%
+        transform scale(0.7)
+        +media-query(all, max-width 560px)
+          transform scale(0.55)

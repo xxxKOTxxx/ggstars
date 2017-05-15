@@ -1,0 +1,26 @@
+footer
+  padding 36px 0 55px
+  border-top 1px $light-border-color solid
+  text-align center
+  .logo
+    size 125px 45px
+    display block
+    margin auto
+  .menu
+    margin 27px auto 22px
+
+  .menu-item
+    line-height 34px
+    +media-query(all, max-width 900px)
+      display block
+  .events-item
+    display inline-block
+    a
+      size 27px
+      display block
+      margin 0 7px
+      fill $link-color
+      transition fill 0.2s linear
+      cursor pointer
+      &:hover
+        fill $link-hover-color

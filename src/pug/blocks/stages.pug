@@ -1,0 +1,185 @@
+#stages.content-block
+  .block-icon
+  h2.block-heading Этапы турнира
+  .block-delimiter
+  .content
+    .styled-text
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae dolor nulla. Donec maximus ullamcorper est vitae pulvinar. Aenean nunc nunc, aliquam id convallis at, pharetra quis felis.
+      p Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem.
+
+    ul.justify-blocks.stages
+      li.justify-block.stage.selection
+        .info
+          .number 1
+          .heading Отбор
+          .description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae dolor nulla. Donec maximus ullamcorper est vitae pulvinar. Aenean nunc nunc, aliquam id convallis at, pharetra quis felis.
+      li.justify-block.stage.semifinal
+        .info
+          .number 2
+          .heading Полуфинал
+          .description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae dolor nulla. Donec maximus ullamcorper est vitae pulvinar. Aenean nunc nunc, aliquam id convallis at, pharetra quis felis.
+      li.justify-block.stage.final
+        .info
+          .number 3
+          .heading Финал
+          .description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae dolor nulla. Donec maximus ullamcorper est vitae pulvinar. Aenean nunc nunc, aliquam id convallis at, pharetra quis felis.
+
+    .lined-wrap
+      span.line.left
+      .lined.bet-heading
+        span Сделай ставку на победителя!
+      span.line.right
+
+    .bet-subheading
+      p Угадаешь победителя -
+        strong  удвоишь свои RC.
+      p Ставки принимаются от&nbsp;
+        strong 1 RC.
+
+    .create-bet
+      .icon
+        .sword.ratio.ratio-83
+          .image.ratio-content
+        .axe.ratio.ratio-83
+          .image.ratio-content
+      .name
+        .sword
+          span!="<?= $bet['sword']['name'] ?>"
+        .axe
+          span!="<?= $bet['axe']['name'] ?>"
+      .vote
+        .sword
+          a.button.main.adaptive-blue(tabindex="11") Голос
+            span.hiding овать
+        .axe
+          a.button.main.adaptive-red(tabindex="12") Голос
+            span.hiding овать
+      .coefficient
+        .sword
+          .lined-wrap
+            span.line.left
+            .lined
+              span.bordered!="<?= $bet['sword']['coefficient'] ?>"
+            span.line.right
+        .axe
+          .lined-wrap
+            span.line.left
+            .lined
+              span.bordered!="<?= $bet['axe']['coefficient'] ?>"
+            span.line.right
+
+    .bets-wrap
+      table.wrap-table
+        tr
+          td.sword
+            table.bets-table.heading
+              tr
+                th.player
+                  span Игрок
+                th.bet
+                  span Сумма ставки
+                th.date
+                  span Время ставки
+                th.gain
+                  span Ваш выигрыш
+          td.axe.hide-column
+            table.bets-table.heading
+              tr
+                th.player
+                  span Игрок
+                th.bet
+                  span Сумма ставки
+                th.date
+                  span Время ставки
+                th.gain
+                  span Ваш выигрыш
+      .scroll-table
+        table.wrap-table
+          tr
+            td.sword
+              table.bets-table.bets
+                !="<? $rows = max(count($bets['sword']['bets']), count($bets['axe']['bets'])); ?>"
+                !="<? for($i = 0; $i < $rows; $i++): ?>"
+                !="<? $bet = isset($bets['sword']['bets'][$i]) ? $bets['sword']['bets'][$i] : false; ?>"
+                !="<? if(!$bet): ?>"
+                tr.empty
+                  td(colspan="4") &nbsp;
+                !="<? else: ?>"
+                tr
+                  td.player
+                    img(
+                      src!="<?= $bet['icon'] ?>"
+                      alt!="<?= $bet['player'] ?>"
+                      title!="<?= $bet['player'] ?>"
+                    )
+                    span(title!="<?= $bet['player'] ?>")!="<?= $bet['player'] ?>"
+                  td.bet
+                    span!="<?= $bet['bet'] ?>"
+                    span &nbsp;RC
+                  td.date
+                    span.block.date!="<?= $bet['date'] ?>"
+                    span.block.time!="<?= $bet['time'] ?>"
+                  td.gain
+                    span!="<?= $bet['gain'] ?>"
+                    span &nbsp;RC
+                !="<? endif; ?>"
+                !="<? endfor; ?>"
+            td.axe.hide-column
+              table.bets-table.bets
+                !="<? for($i = 0; $i < $rows; $i++): ?>"
+                !="<? $bet = isset($bets['axe']['bets'][$i]) ? $bets['axe']['bets'][$i] : false; ?>"
+                !="<? if(!$bet): ?>"
+                tr.empty
+                  td(colspan="4") &nbsp;
+                !="<? else: ?>"
+                tr
+                  td.player
+                    img(
+                      src!="<?= $bet['icon'] ?>"
+                      alt!="<?= $bet['player'] ?>"
+                      title!="<?= $bet['player'] ?>"
+                    )
+                    span(title!="<?= $bet['player'] ?>")!="<?= $bet['player'] ?>"
+                  td.bet
+                    span!="<?= $bet['bet'] ?>"
+                    span &nbsp;RC
+                  td.date
+                    span.block.date!="<?= $bet['date'] ?>"
+                    span.block.time!="<?= $bet['time'] ?>"
+                  td.gain
+                    span!="<?= $bet['gain'] ?>"
+                    span &nbsp;RC
+                !="<? endif; ?>"
+                !="<? endfor; ?>"
+      table.wrap-table
+        tr
+          td.sword
+            table.bets-table.total
+              tr
+                td.total-bets
+                  span Всего&nbsp;
+                  span.hiding ставок
+                  span :&nbsp;
+                  span.value!="<?= $bets['sword']['total']['bets'] ?>"
+                td.switch-column
+                td.total-sum
+                  span Сумма&nbsp;
+                  span.hiding ставок
+                  span :&nbsp;
+                  span.value!="<?= $bets['sword']['total']['sum'] ?>&nbsp;RC"
+          td.axe.hide-column
+            table.bets-table.total
+              tr
+                td.total-bets
+                  span Всего&nbsp;
+                  span.hiding ставок
+                  span :&nbsp;
+                  span.value!="<?= $bets['axe']['total']['bets'] ?>"
+                td.switch-column
+                td.total-sum
+                  span Сумма&nbsp;
+                  span.hiding ставок
+                  span :&nbsp;
+                  span.value!="<?= $bets['axe']['total']['sum'] ?>&nbsp;RC"
+    a.button.main.show-bets(tabindex="13") Показать
+    a.button.main.hide-bets.hide(tabindex="13") Скрыть
