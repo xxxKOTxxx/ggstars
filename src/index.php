@@ -12,7 +12,7 @@
   $keywords = 'league of legends, игровые турниры, starcraft 2, киберспортивная дисциплина, матчи по киберспорту, заработок на играх, матчи lol, матчи starcraft 2, турниры по лиге легенд, новости lol, гайды, обзоры игр, стримы';
 
   $recruited = 8;
-  $tournament_date = 1494896800000;
+  $tournament_date = 1495596800000;
   include 'php/grid.php';
   $grid = generateGrid(2);
 
