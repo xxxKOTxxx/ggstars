@@ -8,9 +8,9 @@ materials/
 # Ignore JetBrains directory
 .idea/
 # Ignore distribution directory
-#www/
+www/
 # Ignore node link
-/Node.lnk
+/Node.js command prompt.lnk
 
 
 # Ignore node link
